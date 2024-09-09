@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%-- chap 01 JSP 경험하기 Ctrl + Space는 자동완성 --%>
 <%! String s = "JSP"; %>
 <% out.println("Hello World" + s); %>
 </body>
