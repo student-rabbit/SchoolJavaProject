@@ -1,0 +1,34 @@
+show databases;
+
+use ExerciseDB;
+
+CREATE TABLE IF NOT EXISTS Student(
+  num int NOT NULL,
+  depart VARCHAR(20),
+  name VARCHAR(30),
+  address VARCHAR(50),
+  phone VARCHAR(20),
+  PRIMARY KEY(num)
+)
+
+-- 06. Student 테이블에 다음과 같이 레코드를 삽입하여 결과를 확인하시오..
+insert into student values('202310001', '모바일과', '홍길순','서울시', '010-9002-1234');
+insert into student values('202310002', '모바일과', '홍길동','경기도', '010-2009-4321');
+insert into student values('202320001', '영어과', '수여인','인천시', '010-9002-0007');
+insert into student values('202320002', '영어과', '김다운','서울시', '010-9002-0101');
+-- 결과 확인
+select * from student
+
+--07. Student 테이블에 depart 필드 값이 '모바일과'인 레코드를 조회하여 결과를 확인하시오.
+select * from student where depart = '모바일과';
+
+--08. Student 테이블에 depart 필드 값이 '모바일과'인 레코드를 모두 '컴퓨터과'로 변경하여 결과를 확인하시오.
+update student set depart = '컴퓨터과' where depart = '모바일과';
+-- 결과 확인
+select * from student
+
+
+--09. Student 테이블에 depart 필드 값이 '영어과'인 레코드를 삭제하여 결과를 확인하시오.
+delete from student where depart='영어과';
+-- 결과 확인
+select * from student
